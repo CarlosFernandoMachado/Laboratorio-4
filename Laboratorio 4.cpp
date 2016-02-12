@@ -75,6 +75,8 @@ int main(int argc, char*argv[]){
 						cin >> z;
 						if (z < 0 || z > 11)
 							cout << "La coordenada z tiene que estar entre 0 y 11" << endl;
+						else
+							validar = false;
 					}
 					validar = true;
 					ataquewaveXY(z,arreglo2,naves2);
@@ -85,6 +87,8 @@ int main(int argc, char*argv[]){
 						cin >> y;
 						if (y < 0 || y > 11)
 							cout << "La coordenada z tiene que estar entre 0 y 11" << endl;
+						else
+							validar = false;
 					}
 					validar = true;
 					ataquewaveXZ(y,arreglo2,naves2);
@@ -95,6 +99,8 @@ int main(int argc, char*argv[]){
 						cin >> x;
 						if (x < 0 || x > 11)
 							cout << "La coordenada z tiene que estar entre 0 y 11" << endl;
+						else
+							validar = false;
 					}
 					validar = true;
 					ataquewaveYZ(x,arreglo2,naves2);
@@ -121,7 +127,6 @@ int main(int argc, char*argv[]){
 				}
 			}
 			validar = true;
-			cin >> menu;
 			if (menu == 1){
 				while (validar){
 					cout << "Ingrese coordinada x: ";
@@ -150,6 +155,8 @@ int main(int argc, char*argv[]){
 						cin >> z;
 						if (z < 0 || z > 11)
 							cout << "La coordenada z tiene que estar entre 0 y 11" << endl;
+						else
+							validar = false;
 					}
 					validar = true;
 					ataquewaveXY(z,arreglo1,naves1);
@@ -160,6 +167,8 @@ int main(int argc, char*argv[]){
 						cin >> y;
 						if (y < 0 || y > 11)
 							cout << "La coordenada z tiene que estar entre 0 y 11" << endl;
+						else
+							validar = false;
 					}
 					validar = true;
 					ataquewaveXZ(y,arreglo1,naves1);
@@ -170,12 +179,14 @@ int main(int argc, char*argv[]){
 					cin >> x;
 						if (x < 0 || x > 11)
 							cout << "La coordenada x tiene que estar entre 0 y 11" << endl;
+						else
+							validar = false;
 					}
 					validar = true;
 					ataquewaveYZ(x,arreglo1,naves1);
 				}
 			}else if (menu == 3){
-
+				
 			}
 		}
 	}
