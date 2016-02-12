@@ -67,6 +67,7 @@ int main(int argc, char*argv[]){
 				validar = true;
 				ataquenormal(x,y,z,arreglo2,naves2);
 			}else if (menu == 2){
+				waves1--;
 				cout << "1: XY\n2: XZ\n3: YZ\n";
 				cin >> menu;
 				if (menu == 1){
@@ -124,6 +125,7 @@ int main(int argc, char*argv[]){
 				}
 				validar = true;
 				ataqueExpansive(x,y,z,arreglo2,naves2);
+				expansive1--;
 			}
 		}else{
 			cout << "-------------------------JUGADOR-2---------------------------------" << endl;
@@ -164,6 +166,7 @@ int main(int argc, char*argv[]){
 				validar = true;
 				ataquenormal(x,y,z,arreglo1,naves1);
 			}else if (menu == 2){
+				waves2--;
 				cout << "1: XY\n2: XZ\n3: YZ\n";
 				cin >> menu;
 				if (menu == 1){
@@ -221,6 +224,7 @@ int main(int argc, char*argv[]){
 				}
 				validar = true;
 				ataqueExpansive(x,y,z,arreglo1,naves1);
+				expansive2--;
 			}
 		}
 	}
