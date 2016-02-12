@@ -11,6 +11,7 @@ int*** crear();
 void AsignarNaves(int*** &x);
 void ImprimirNaves(int*** x);
 void ataquenormal(int x, int y, int z, int*** &arreglo, int &naves);
+void ataqueExpansive(int x, int y, int z, int*** &arreglo, int &naves);
 
 int main(int argc, char*argv[]){
 	int size = 12;
@@ -134,5 +135,22 @@ void ataquenormal(int x, int y, int z, int*** &arreglo, int &naves){
 		naves--;
 		cout << "Destruyo la nave en el punto: (" << x << "," << y << "," << z << ")" << endl;
 		arreglo[x][y][z] = 1;
+	}
+}
+void ataqueExpansive(int x, int y, int z, int*** &arreglo, int &naves){
+
+	if(x>0 && y>0 && z>0 && x<11 && y<11 && z<11){	
+
+		for(int i=x-1;i<x+2;i++){
+			for(int j=y-1;j<x+2;j++){
+				for(int w=z-1;w<x+2;w++){
+					if(arreglo[i][j][w]==2){
+						cout << "Nave destruida" << endl;
+						naves--;
+						arreglo[i][j][w]=1;
+					}	
+				}
+			}
+		}
 	}
 }
