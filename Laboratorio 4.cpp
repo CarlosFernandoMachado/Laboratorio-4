@@ -19,10 +19,11 @@ int main(int argc, char*argv[]){
 	int turno = 1, menu = 0;
 	int waves1 = 3, waves2 = 3, expansive1 = 3, expansive2 = 3;
 	AsignarNaves(arreglo1);
-	ImprimirNaves(arreglo1);
+	AsignarNaves(arreglo2);
 	while (naves1 != 0 || naves2 != 0){
 		if (turno == 1){
 			turno++;
+			ImprimirNaves(arreglo1);
 			cout << "Le quedan " << naves2 << " por destruir" << endl;
 			cout << "Tiene " << waves1 << " ataques wave restantes" << endl;
 			cout << "Tiene " << expansive1 << " ataques expansive restantes" << endl;
@@ -35,10 +36,19 @@ int main(int argc, char*argv[]){
 
 			}
 		}else{
+			ImprimirNaves(arreglo2);
 			turno --;
 			cout << "Le quedan " << naves1 << " por destruir" << endl;
 			cout << "Tiene " << waves2 << " ataques wave restantes" << endl;
 			cout << "Tiene " << expansive2 << " ataques expansive restantes" << endl;
+			cout << "1: Ataque Normal\n2: Ataque Wave\n3: Ataque Expansive" << endl;
+			if (menu == 1){
+
+			}else if (menu == 2){
+
+			}else if (menu == 3){
+
+			}
 		}
 	}
 	borrar(arreglo1,size);

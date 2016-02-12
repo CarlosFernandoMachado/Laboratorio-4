@@ -97,7 +97,7 @@ void ImprimirNaves(int*** x){
 		for(int j=0;j<12;j++){
 			for(int w=0;w<12;w++){
 				if(x[i][j][w]==2){
-					cout << "Nave en posicion: " << "( " << i << " " << j << " " << w << " )" << endl;
+					cout << "Nave en posicion: " << "( " << i << "," << j << "," << w << " )" << endl;
 				}
 			}	
 		}
