@@ -1,21 +1,25 @@
 # include <iostream>
-# include <ctime>
-# include <cstdlib>
+#include <ctime>
+#include<cstdlib>
 
 using std::cout;
 using std::cin;
 using std::endl;
 
-void borrar(int*** arreglo[], int size);
+void borrar(int*** &arreglo, int size);
 int*** crear();
-void AsignarNaves(int*** x);
+void AsignarNaves(int*** &x);
+void ImprimirNaves(int*** x);
 
 int main(int argc, char*argv[]){
+	int size = 12;
 	int*** arreglo1 = crear();
 	int*** arreglo2 = crear();
-	int naves1 = 15, naves2 = 15;
+	int naves1 = 0, naves2 = 0;
 	int turno = 1, menu = 0;
 	int waves1 = 3, waves2 = 3, expansive1 = 3, expansive2 = 3;
+	AsignarNaves(arreglo1);
+	ImprimirNaves(arreglo1);
 	while (naves1 != 0 || naves2 != 0){
 		if (turno == 1){
 			turno++;
@@ -37,10 +41,12 @@ int main(int argc, char*argv[]){
 			cout << "Tiene " << expansive2 << " ataques expansive restantes" << endl;
 		}
 	}
+	borrar(arreglo1,size);
+	borrar(arreglo2,size);
 	return 0;
 }
 
-void borrar(int*** arreglo[], int size){
+void borrar(int*** &arreglo, int size){
 	for (int i = 0; i < size; i++)
 		for (int j = 0; j < size; j++)
 			delete[] arreglo[i][j];
@@ -58,10 +64,9 @@ int*** crear(){
 			arreglo[i][j] = new int[size];
 	return arreglo;
 }
-void AsignarNaves(int*** x){
+void AsignarNaves(int*** &x){
 
 	int naves=15,ran1,ran2,ran3;
-
 	for(int i=0;i<12;i++){
 		for(int j=0;j<12;j++){
 			for(int w=0;w<12;w++){
@@ -69,7 +74,6 @@ void AsignarNaves(int*** x){
 			}	
 		}
 	}
-
 	while(naves!=0){
 
 		srand(time(NULL));
@@ -78,10 +82,24 @@ void AsignarNaves(int*** x){
 		ran3 = rand()%12+0;		
 
 		if(x[ran1][ran2][ran3]==1){
-			x[ran1][ran2][ran3]==2;
+			x[ran1][ran2][ran3]=2;
 			naves--;
 		}else{
 
 		}
 	}	
+}
+void ImprimirNaves(int*** x){
+	
+	cout << "----------NAVES----------" << endl;
+
+	for(int i=0;i<12;i++){
+		for(int j=0;j<12;j++){
+			for(int w=0;w<12;w++){
+				if(x[i][j][w]==2){
+					cout << "Nave en posicion: " << "( " << i << "," << j << "," << w << " )" << endl;
+				}
+			}	
+		}
+	}
 }
