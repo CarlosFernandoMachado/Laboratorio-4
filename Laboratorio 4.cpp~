@@ -1,4 +1,6 @@
 # include <iostream>
+#include <ctime>
+#include<cstdlib>
 
 using std::cout;
 using std::cin;
@@ -7,6 +9,7 @@ using std::endl;
 void borrar(int*** arreglo[], int size);
 int*** crear();
 void AsignarNaves(int*** x);
+void ImprimirNaves(int*** x);
 
 int main(int argc, char*argv[]){
 	int*** arreglo1 = crear();
@@ -59,4 +62,18 @@ void AsignarNaves(int*** x){
 
 		}
 	}	
+}
+void ImprimirNaves(int*** x){
+	
+	cout << "----------NAVES----------" << endl;
+
+	for(int i=0;i<12;i++){
+		for(int j=0;j<12;j++){
+			for(int w=0;w<12;w++){
+				if(x[i][j][w]==2){
+					cout << "Nave en posicion: " << "( " << i << " " << j << " " << w << " )" << endl;
+				}
+			}	
+		}
+	}
 }
