@@ -1,4 +1,6 @@
 # include <iostream>
+# include <ctime>
+# include <cstdlib>
 
 using std::cout;
 using std::cin;
@@ -11,7 +13,30 @@ void AsignarNaves(int*** x);
 int main(int argc, char*argv[]){
 	int*** arreglo1 = crear();
 	int*** arreglo2 = crear();
-	
+	int naves1 = 15, naves2 = 15;
+	int turno = 1, menu = 0;
+	int waves1 = 3, waves2 = 3, expansive1 = 3, expansive2 = 3;
+	while (naves1 != 0 || naves2 != 0){
+		if (turno == 1){
+			turno++;
+			cout << "Le quedan " << naves2 << " por destruir" << endl;
+			cout << "Tiene " << waves1 << " ataques wave restantes" << endl;
+			cout << "Tiene " << expansive1 << " ataques expansive restantes" << endl;
+			cout << "1: Ataque Normal\n2: Ataque Wave\n3: Ataque Expansive" << endl;
+			if (menu == 1){
+
+			}else if (menu == 2){
+
+			}else if (menu == 3){
+
+			}
+		}else{
+			turno --;
+			cout << "Le quedan " << naves1 << " por destruir" << endl;
+			cout << "Tiene " << waves2 << " ataques wave restantes" << endl;
+			cout << "Tiene " << expansive2 << " ataques expansive restantes" << endl;
+		}
+	}
 	return 0;
 }
 

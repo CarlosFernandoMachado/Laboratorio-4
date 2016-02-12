@@ -1,4 +1,6 @@
 # include <iostream>
+# include <ctime>
+# include <cstdlib>
 
 using std::cout;
 using std::cin;
@@ -11,7 +13,15 @@ void AsignarNaves(int*** x);
 int main(int argc, char*argv[]){
 	int*** arreglo1 = crear();
 	int*** arreglo2 = crear();
-	
+	int naves1 = 15, naves2 = 15;
+	int turno = 1;
+	while (naves1 != 0 || naves2 != 0){
+		if (turno == 1){
+			turno++;
+		}else{
+			turno --;
+		}
+	}
 	return 0;
 }
 
