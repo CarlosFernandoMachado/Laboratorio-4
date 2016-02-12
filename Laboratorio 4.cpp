@@ -10,6 +10,7 @@ void borrar(int*** &arreglo, int size);
 int*** crear();
 void AsignarNaves(int*** &x);
 void ImprimirNaves(int*** x);
+void ataquenormal(int x, int y, int z, int*** &arreglo, int &naves);
 
 int main(int argc, char*argv[]){
 	int size = 12;
@@ -18,6 +19,7 @@ int main(int argc, char*argv[]){
 	int naves1 = 0, naves2 = 0;
 	int turno = 1, menu = 0;
 	int waves1 = 3, waves2 = 3, expansive1 = 3, expansive2 = 3;
+	int x,y,z;
 	AsignarNaves(arreglo1);
 	AsignarNaves(arreglo2);
 	while (naves1 != 0 || naves2 != 0){
@@ -28,8 +30,15 @@ int main(int argc, char*argv[]){
 			cout << "Tiene " << waves1 << " ataques wave restantes" << endl;
 			cout << "Tiene " << expansive1 << " ataques expansive restantes" << endl;
 			cout << "1: Ataque Normal\n2: Ataque Wave\n3: Ataque Expansive" << endl;
+			cin >> menu;
 			if (menu == 1){
-
+				cout << "Ingrese coordinada x: ";
+				cin >> x;
+				cout << "Ingrese coordinada y: ";
+				cin >> y;
+				cout << "Ingrese coordinada z: ";
+				cin >> z;
+				ataquenormal(x,y,z,arreglo2,naves2);
 			}else if (menu == 2){
 
 			}else if (menu == 3){
@@ -42,8 +51,15 @@ int main(int argc, char*argv[]){
 			cout << "Tiene " << waves2 << " ataques wave restantes" << endl;
 			cout << "Tiene " << expansive2 << " ataques expansive restantes" << endl;
 			cout << "1: Ataque Normal\n2: Ataque Wave\n3: Ataque Expansive" << endl;
+			cin >> menu;
 			if (menu == 1){
-
+				cout << "Ingrese coordinada x: ";
+				cin >> x;
+				cout << "Ingrese coordinada y: ";
+				cin >> y;
+				cout << "Ingrese coordinada z: ";
+				cin >> z;
+				ataquenormal(x,y,z,arreglo1,naves1);
 			}else if (menu == 2){
 
 			}else if (menu == 3){
@@ -111,5 +127,12 @@ void ImprimirNaves(int*** x){
 				}
 			}	
 		}
+	}
+}
+void ataquenormal(int x, int y, int z, int*** &arreglo, int &naves){
+	if (arreglo[x][y][z] == 2){
+		naves--;
+		cout << "Destruyo la nave en el punto: (" << x << "," << y << "," << z << ")" << endl;
+		arreglo[x][y][z] = 1;
 	}
 }
