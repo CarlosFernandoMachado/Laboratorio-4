@@ -106,7 +106,24 @@ int main(int argc, char*argv[]){
 					ataquewaveYZ(x,arreglo2,naves2);
 				}
 			}else if (menu == 3){
-
+				while (validar){
+					cout << "Ingrese coordinada x: ";
+					cin >> x;
+					cout << "Ingrese coordinada y: ";
+					cin >> y;
+					cout << "Ingrese coordinada z: ";
+					cin >> z;
+					if (x < 0 || x > 11)
+						cout << "La cordenada x tiene que estar entre 0 y 11" << endl;
+					else if (y < 0 || y > 11)
+						cout << "La cordenada y tiene que estar entre 0 y 11" << endl;
+					else if (z < 0 || z > 11)
+						cout << "La cordenada z tiene que estar entre 0 y 11" << endl;
+					else
+						validar = false;
+				}
+				validar = true;
+				ataqueExpansive(x,y,z,arreglo2,naves2);
 			}
 		}else{
 			cout << "-------------------------JUGADOR-2---------------------------------" << endl;
@@ -186,7 +203,24 @@ int main(int argc, char*argv[]){
 					ataquewaveYZ(x,arreglo1,naves1);
 				}
 			}else if (menu == 3){
-				
+				while (validar){
+					cout << "Ingrese coordinada x: ";
+					cin >> x;
+					cout << "Ingrese coordinada y: ";
+					cin >> y;
+					cout << "Ingrese coordinada z: ";
+					cin >> z;
+					if (x < 0 || x > 11)
+						cout << "La cordenada x tiene que estar entre 0 y 11" << endl;
+					else if (y < 0 || y > 11)
+						cout << "La cordenada y tiene que estar entre 0 y 11" << endl;
+					else if (z < 0 || z > 11)
+						cout << "La cordenada z tiene que estar entre 0 y 11" << endl;
+					else
+						validar = false;
+				}
+				validar = true;
+				ataqueExpansive(x,y,z,arreglo1,naves1);
 			}
 		}
 	}

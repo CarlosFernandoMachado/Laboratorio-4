@@ -127,7 +127,6 @@ int main(int argc, char*argv[]){
 				}
 			}
 			validar = true;
-			cin >> menu;
 			if (menu == 1){
 				while (validar){
 					cout << "Ingrese coordinada x: ";
@@ -187,7 +186,7 @@ int main(int argc, char*argv[]){
 					ataquewaveYZ(x,arreglo1,naves1);
 				}
 			}else if (menu == 3){
-
+				
 			}
 		}
 	}
