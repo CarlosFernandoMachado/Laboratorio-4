@@ -8,7 +8,6 @@ void borrar(int*** arreglo[], int size);
 int*** crear();
 
 int main(int argc, char*argv[]){
-	int size = 12;
 	int*** arreglo1 = crear();
 	int*** arreglo2 = crear();
 	
