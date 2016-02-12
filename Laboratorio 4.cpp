@@ -265,7 +265,7 @@ void ataquenormal(int x, int y, int z, int*** &arreglo, int &naves){
 }
 void ataqueExpansive(int x, int y, int z, int*** &arreglo, int &naves){
 
-	if(x>0 && y>0 && z>0 && x<11 && y<11 && z<11){	
+	if(x>0 || y>0 || z>0 || x<11 || y<11 || z<11){	
 
 		for(int i=x-1;i<x+2;i++){
 			for(int j=y-1;j<x+2;j++){
